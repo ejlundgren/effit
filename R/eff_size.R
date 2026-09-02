@@ -195,8 +195,7 @@ eff_size <- function(...,
     # Print SAFE warnings:
     if(SAFE == TRUE &&
        verbose == TRUE){
-      cat(unique(effect_formulas.sub$SAFE_warning), "\n",
-          "Leaving it to user's discretion to check prior to execution.\n\n")
+      cat(unique(effect_formulas.sub$SAFE_warning), "\n\n")
     }
 
     # Deal with alternative SAFE distributions.
