@@ -49,11 +49,6 @@
 #' information on SAFE see Nakagawa et al. 2026 and the associated tutorial.
 #'
 #'
-#' @references
-#' W. Viechtbauer, Conducting meta-analyses in R with the metafor package. Journal of Statistical Software. (2010). https://doi.org/10.18637/jss.v036.i03.
-#'
-#' S. Nakagawa, A. Mizuno, C. Williams, S. Ortega, S. M. Drobniak, M. Lagisz, Y. Yang, A. M. Senior, D. W. A. Noble, E. Lundgren, Mastering an Accurate and generalizable simulation-based method to obtain bias-corrected point estimates and sampling variance for any effect sizes, Research Synthesis Methods (2026).
-#'
 #' # TO DO:
 #' **ADD a message in function regarding which estimator is preferred if default_formulas = FALSE?**
 #'
@@ -192,9 +187,15 @@ eff_size <- function(...,
     }
 
     # Print effect size specific warnings, e.g., 0 in lnOR and lnRR
-    if(!is.na(unique(effect_formulas.sub$special_warnings)) &&
-       verbose == TRUE){
+    if(verbose == TRUE){
       cat(unique(effect_formulas.sub$special_warnings), "\n",
+          "Leaving it to user's discretion to check prior to execution.\n\n")
+    }
+
+    # Print SAFE warnings:
+    if(SAFE == TRUE &&
+       verbose == TRUE){
+      cat(unique(effect_formulas.sub$SAFE_warning), "\n",
           "Leaving it to user's discretion to check prior to execution.\n\n")
     }
 
@@ -287,3 +288,10 @@ eff_size <- function(...,
 
     return(out)
 }
+
+#'
+#' @references
+#' W. Viechtbauer, Conducting meta-analyses in R with the metafor package. Journal of Statistical Software. (2010). https://doi.org/10.18637/jss.v036.i03.
+#'
+#' S. Nakagawa, A. Mizuno, C. Williams, S. Ortega, S. M. Drobniak, M. Lagisz, Y. Yang, A. M. Senior, D. W. A. Noble, E. Lundgren, Mastering an Accurate and generalizable simulation-based method to obtain bias-corrected point estimates and sampling variance for any effect sizes, Research Synthesis Methods (2026).
+#'

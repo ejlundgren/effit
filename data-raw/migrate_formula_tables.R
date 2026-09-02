@@ -4,7 +4,7 @@
 #
 # UGH. Hahah
 
-
+rm(list = ls())
 library("data.table")
 
 effect_formulas <- fread("../metatools_dev/data/effect_size_formulas.csv")
@@ -20,6 +20,14 @@ effect_formulas[effect_size == "lnHWE_A", effect_size := "lnHWE"]
 
 names(effect_formulas)
 effect_formulas <- effect_formulas[, !c("lower_filter", "upper_filter", "n_versions")]
+
+# Split this between SAFE and non-SAFE...
+unique(effect_formulas$special_warnings)
+effect_formulas[grepl("SMD", special_warnings), SAFE_warning := special_warnings]
+effect_formulas[grepl("SMD", special_warnings), special_warnings := "SMD requires equal variance between groups. If variance is different between groups use SMDH."]
+
+effect_formulas[grepl("lnCVR", special_warnings), SAFE_warning := special_warnings]
+effect_formulas[grepl("lnCVR", special_warnings), special_warnings := ""]
 
 # file.exists("../metatools/data/effect_formulas.rda")
 # save(effect_formulas, file = "../metatools/data/effect_formulas.rda")

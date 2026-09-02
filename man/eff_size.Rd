@@ -108,10 +108,7 @@ If you are using SAFE, you may need to adjust \code{SAFE_boots} (the number of S
 information on SAFE see Nakagawa et al. 2026 and the associated tutorial.
 }
 }
-\references{
-W. Viechtbauer, Conducting meta-analyses in R with the metafor package. Journal of Statistical Software. (2010). https://doi.org/10.18637/jss.v036.i03.
-
-S. Nakagawa, A. Mizuno, C. Williams, S. Ortega, S. M. Drobniak, M. Lagisz, Y. Yang, A. M. Senior, D. W. A. Noble, E. Lundgren, Mastering an Accurate and generalizable simulation-based method to obtain bias-corrected point estimates and sampling variance for any effect sizes, Research Synthesis Methods (2026).TO DO:
-
+\section{TO DO:}{
 \strong{ADD a message in function regarding which estimator is preferred if default_formulas = FALSE?}
 }
+
