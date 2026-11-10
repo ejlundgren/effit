@@ -2,7 +2,7 @@
 #
 #
 #
-# UGH. Hahah
+#
 
 rm(list = ls())
 library("data.table")
