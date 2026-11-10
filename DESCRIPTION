@@ -1,7 +1,7 @@
 Package: metatools
 Type: Package
 Title: Calculate and Convert Effect Sizes
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person(
       "Erick", "Lundgren",

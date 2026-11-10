@@ -39,4 +39,7 @@ conversion_formulas
 
 # save(conversion_formulas, file = "../metatools/data/conversion_formulas.rda")
 
-usethis::use_data(effect_formulas, conversion_formulas, internal = FALSE, overwrite = TRUE)
+usethis::use_data(effect_formulas, conversion_formulas,
+                  internal = FALSE,
+                  overwrite = TRUE)
+
