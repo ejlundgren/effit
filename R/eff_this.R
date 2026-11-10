@@ -67,17 +67,16 @@
 #' @param SAFE_max_secs Numeric. Number of seconds to conduct SAFE bootstrapping before timing out. See Details.
 #' @param n_cores Numeric. Number of cores for parallel processing of SAFE calculation. See Details.
 #' @param SAFE_distribution Character. Distribution to use for SAFE bootstrapping. If unspecified, will use default distribution. See Details.
-#' @param sigma_matrix Matrix. Optional custom sigma_matrix for SAFE bootstrapping (experimental)
+#' @param custom_sigma_matrix Matrix. Optional custom sigma_matrix for SAFE bootstrapping (experimental)
 #' @param verbose How chatty do you want the function to be? Logical
 #' @return A data.table with effect sizes and sample variances.
 #' @export
-eff_size <- function(...,
+eff_this <- function(...,
                      effect_type = NULL,
                      data = NULL,
                      bind = TRUE,
                      paired = FALSE,
                      default_formulas = TRUE,
-                     formula_path = "data/effect_size_formulas.csv",
                      SAFE = FALSE,
                      SAFE_boots = 1e6,
                      SAFE_max_secs = 15,
@@ -97,7 +96,6 @@ eff_size <- function(...,
     if(!is.null(data)) dat <- copy(data)
 
     # Load formulas -----------------------------------------------------------
-    # load("data/effect_formulas.rda")
 
     data.table::setorder(effect_formulas, effect_size, calc_type)
 

@@ -17,12 +17,12 @@
 #' @param bind Whether to bind outputs to 'data'.
 #' @return A data.table with effect sizes and sample variances (if bind = TRUE). Transformed effect sizes are labeled 'yi_trans' and 'vi_trans'.
 #' @export
-convert_effect_sizes <- function(...,
-                                 from = NULL,
-                                 to = NULL,
-                                 data = NULL,
-                                 bind = FALSE
-                                 ){
+this_to_that <- function(...,
+                         from = NULL,
+                         to = NULL,
+                         data = NULL,
+                         bind = FALSE
+                         ){
   env <- parent.frame()
 
   if(!is.null(data)) setDT(data)

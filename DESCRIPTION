@@ -1,4 +1,4 @@
-Package: metatools
+Package: effit
 Type: Package
 Title: Calculate and Convert Effect Sizes
 Version: 0.1.1
@@ -9,16 +9,16 @@ Authors@R: c(
       role = c("aut", "cre")
     )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
+Description: Calculate and convert effect sizes.
 License: MIT
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 4.1.0)
 Imports:
-	data.table (>= 1.9.4),
-	MASS (>= 7.3-65),
-	crayon (>= 1.5.3),
-	tools (>= 4.5.0)
+    data.table (>= 1.9.4),
+    MASS (>= 7.3-65),
+    crayon (>= 1.5.3),
+    tools (>= 4.5.0),
+    pbapply
 Roxygen: list(markdown = TRUE)
 Config/roxygen2/version: 8.1.0
